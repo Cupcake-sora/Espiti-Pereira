@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RESERVAS</title>
+	<link href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Cinzel:wght@400;500&family=Jura&family=Parisienne&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            	<li><a href="../index.html">Espiti</a></li>
+				<li><a href="sedes.html">Sedes</a></li>
+				<li><a href="menu.html">Menu</a></li>
+				<li><a href="tienda.html">Tienda</a></li>
+			 	<li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>	
+
+	<div>
+		<form>
+			<fieldset>
+				<legend>Seleccione una sala:</legend>
+	            <label><input type="radio" name="sala" value="sala-A">Sala de juntas A (Max. 15 pers.)</label>
+    	        <br>
+        	    <label><input type="radio" name="sala" value="sala-B">Sala de juntas B (Max. 10 pers.)</label>
+            	<br>
+	            <label><input type="radio" name="sala" value="sala-C">Sala de juntas C (Max. 6 pers.)</label>
+    	        <br>
+			</fieldset>
+
+        	<fieldset>
+        		<legend>Tiempo de estancia:</legend>
+            	<label><input type="radio" name="estancia" value="1h">1 hora</label>
+	            <br>
+    	        <label><input type="radio" name="estancia" value="2h">2 horas</label>
+        	    <br>
+            	<label><input type="radio" name="estancia" value="3h">3 horas</label>
+	            <br>
+    	        <label><input type="radio" name="estancia" value="6h">6 horas</label>
+        	    <br>
+            	<label><input type="radio" name="estancia" value="8h">8 horas</label>
+            	<br>
+        	</fieldset>
+
+        	<fieldset>
+        		<legend>Selecciones la/s fecha/s:</legend>
+        		<input type=”date” id=”fecha” name=”fecha” required placeholder="dd/mm/aa">
+        	</fieldset>
+
+        	<fieldset>
+        		<legend>Servicios requeridos</legend>
+        		<label><input type="checkbox" name="servicios" value="ninguno">Ningun servicio</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="proyector">Proyector</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="d/m-simple">Desayuno/merienda simple</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="d/m-completo">Desayuno/merienda completo</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="a/c-simple">Almuerso/cena simple</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="a/c-completo">Almuerso/cena completo</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="break-simple">Break simple</label>
+        		<br>
+        		<label><input type="checkbox" name="servicios" value="break-completo">Break completo</label>
+        		<br>
+        	</fieldset>
+
+        	<fieldset>
+				<legend>Contacto</legend>
+				<label for="nombreapellido">Nombre y Apellido</label>
+				<input type="text" id="nombreapellido" required placeholder="Rodrigo Gutierrez">
+				<br>
+				<label for="correoelectronico">Correo Electronico</label>
+				<input type="email" id="correoelectronico" required placeholder="r-gutierrez@email.com">
+				<br>
+				<label for="telefono">Telefono</label>
+				<input type="tel" id="telefono" required placeholder="+(54) 9 11 1234-5678">
+				<br>
+				<label for="mensaje">Mensaje</label>
+				<br>
+				<textarea cols="70" rows="10" id="mensaje" required placeholder="Comentarios y aclaraciones."></textarea>
+			</fieldset>
+
+			<br>
+			<hr>
+			<button type="submit">Vista previa del presupuesto.</button>
+			<br>
+			<hr>
+			<label><input type="checkbox" name="terminos" value="terminos">Acepto los terminos y condiciones.</label>
+			<br>
+
+			<button type="submit">Reservar</button>
+		</form>
+
+	</div>
+
+	<!-- inicio de pie de pagina // agregar links-->
+	<footer>
+    	<div class="cajaFooter">
+	        <div class="cajita">
+	        	<img src="../imagenes/ic-ubi.png" alt="icono ubicacion" class="imgFooter">
+	        	<a href="#">DIRECCION 1234</a>
+	        </div>
+	        <div class="cajita">
+	        	<img src="../imagenes/ic-wpp.png" alt="icono whatsapp" class="imgFooter">
+	        	<a href="#" > 11-1234-5678</a>
+	        </div>
+	        <div class="cajita">
+	        	<img src="../imagenes/ic-ig.png" alt="icono instagram" class="imgFooter">
+	        	<a href="#" > ESPITI_COFFEE</a>
+	        </div>
+	        <div class="cajita">
+	        	<img src="../imagenes/ic-fb.png" alt="icono facebook" class="imgFooter">
+	        	<a href="#" > ESPITI_COFFEE</a>
+        	</div>
+        </div>
+		<div class="copy">
+			<small>&copy; 2022 <b>espiti</b> - Todos los Derechos Reservados.</small>
+	    </div>
+	</footer>
+    
+</body>
+</html>
