@@ -17,6 +17,13 @@ body {
   background-color: rgb(187, 136, 112);
 }
 
+.carouselReservas{
+height: 50%;
+}
+
+
+
+
 header {
   z-index: 3;	
   width: 100%;
@@ -169,6 +176,15 @@ footer a:hover {
 .txt {
   margin-bottom: 1%;
 }
+
+.card{
+  background-color: rgba(0, 255, 255, 0);
+}
+
+
+
+
+
 
 /*                                           medias                                   */
 
