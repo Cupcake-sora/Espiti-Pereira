@@ -1,10 +1,199 @@
-@import url(_vars.scss);
-@import url(_nav.scss);
 body {
   font-family: "Alegreya SC", serif;
   text-align: center;
   background-color: #d8b691;
   color: #5a3725; }
+
+.logoCafe {
+  height: 10vh; }
+
+.bgSwhite {
+  background-color: #bb8870; }
+
+.carouselReservas {
+  height: 50%; }
+
+.carousel-item {
+  height: 50vh; }
+
+#carouselReservas div img {
+  height: 50vh; }
+
+.imgReservas {
+  height: 50vh; }
+
+header {
+  z-index: 3;
+  width: 100%;
+  height: fit-content;
+  grid-area: nav;
+  background-color: #c3784ff2;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0px; }
+
+#banner {
+  width: 100%;
+  grid-area: ban;
+  background-image: url("../imagenes/banner.png");
+  background-size: cover;
+  color: #4e2700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center; }
+
+#fotos {
+  width: 100%;
+  grid-area: ph; }
+
+#nosotros {
+  grid-area: nosotros; }
+
+#valores {
+  grid-area: valores; }
+
+#compromisos {
+  grid-area: compromisos;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center; }
+
+footer {
+  width: 100%;
+  height: fit-content;
+  grid-area: pie;
+  background-color: #c3784ff2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+nav ul {
+  list-style: none;
+  display: inline-block; }
+
+nav ul li {
+  display: inline-block;
+  margin: 10px; }
+
+nav ul li a {
+  font-size: 20px;
+  color: #4e2700;
+  text-decoration: none; }
+
+/* en el index, margen para textos*/
+.marg {
+  width: 92%;
+  margin: 4%; }
+
+.cajaFooter {
+  display: flex;
+  gap: 2rem; }
+
+.cajita {
+  display: flex;
+  align-items: center;
+  gap: 1rem; }
+
+.imgFooter {
+  height: 4vh;
+  width: 4vh; }
+
+footer a {
+  color: #4e2700;
+  font-size: 20px;
+  text-decoration: none; }
+
+/*
+nav ul li a:hover 
+& footer a:hover{
+  color: $colorHover;
+}
+*/
+/*                                   grid para pagina sedes                              */
+#gridSedes {
+  display: grid;
+  grid-template-rows: repeat(3, auto) repeat(3, 1fr) auto;
+  grid-template-columns: 40% 60%;
+  grid-template-areas: "nav nav" "phSj phSj" "infoSds infoSds " "mapPl infoPl" "mapMc infoMc" "mapPm infoPm" "pie pie "; }
+
+#fotosSj {
+  width: 100%;
+  grid-area: phSj; }
+
+#infoSedes {
+  grid-area: infoSds; }
+
+#mapaPalermo {
+  grid-area: mapPl; }
+
+#infoPalermo {
+  grid-area: infoPl; }
+
+#mapaCentro {
+  grid-area: mapMc; }
+
+#infoCentro {
+  grid-area: infoMc; }
+
+#mapaMadero {
+  grid-area: mapPm; }
+
+#infoMadero {
+  grid-area: infoPm; }
+
+.mapas {
+  width: 92%;
+  margin: 4%;
+  height: 30vh; }
+
+.cTxt {
+  width: 94%;
+  margin: 3%;
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+
+.txt {
+  margin-bottom: 1%; }
+
+.card {
+  background-color: rgba(0, 255, 255, 0); }
+
+/*                                           medias                                   */
+@media screen and (max-width: 1024px) {
+  .cajaFooter {
+    flex-direction: column;
+    display: flex;
+    align-items: flex-start;
+    gap: initial; }
+  #gridSedes {
+    grid-template-rows: repeat(10, auto);
+    grid-template-columns: 100%;
+    grid-template-areas: "nav" "phSj" "infoSds" "mapPl" "infoPl" "mapMc" "infoMc" "mapPm" "infoPm" "pie"; }
+  .cTxt {
+    width: 100%;
+    height: 100%;
+    margin: initial; }
+  .mapas {
+    margin: 3% 3% 0 3%; } }
+
+@media screen and (max-width: 768px) {
+  #gridIndex {
+    grid-template-rows: repeat(7, auto);
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav" "ban" "ph" "nosotros" "valores" "compromisos" "pie"; }
+  nav ul {
+    flex-direction: column;
+    display: flex; }
+    nav ul li {
+      margin: initial; }
+  .nav-link {
+    padding: 0.2rem; } }
 
 @media screen and (max-width: 768px) {
   #gridIndex {

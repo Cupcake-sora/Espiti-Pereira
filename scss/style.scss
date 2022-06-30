@@ -1,4 +1,4 @@
-@import url(_vars.scss);
+@import "_vars";
 
 
 
@@ -123,11 +123,17 @@ footer a {
 
 
 
-
+/*
 nav ul li a:hover 
 & footer a:hover{
   color: $colorHover;
 }
+*/
+
+
+
+
+
 /*                                   grid para pagina sedes                              */
 
 #gridSedes {
