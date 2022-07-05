@@ -1,0 +1,15 @@
+nav {
+    z-index: 3;
+    background-color: $bgNavFooter;
+    top: 0px;
+
+    .logoCafe {
+        height: 10vh;
+    }
+
+    a {
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+}
