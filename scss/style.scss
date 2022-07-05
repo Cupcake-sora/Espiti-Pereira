@@ -11,6 +11,6 @@
 body {
   font-family: "Alegreya SC", serif;
   text-align: center;
-  background-color: $bgBody;
-  color: $fontColor;
+  background-color:map-get($colores, "bgBody");
+  color:map-get($colores, "fontColor");
 }

@@ -1,6 +1,6 @@
 nav {
     z-index: 3;
-    background-color: $bgNavFooter;
+    background-color:map-get($colores, "bgNavFooter");
     top: 0px;
 
     .logoCafe {
