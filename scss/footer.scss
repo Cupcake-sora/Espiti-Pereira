@@ -1,38 +1,14 @@
 footer {
-    height: fit-content;
-    background-color:map-get($colores, "bgNavFooter");
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: map-get($colores, "bgNavFooter");
 
-    .cajaFooter {
-        display: flex;
-        gap: 0.6rem;
+    a,
+    h6,
+    p {
+        color: map-get($colores, "fontColor");
 
-        @media screen and (max-width: 800px) {
-            & {
-                flex-direction: column;
-                display: flex;
-                align-items: flex-start;
-                gap: 0;
-            }
-        }
-
-        .cajita {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-
-            .imgFooter {
-                height: 4vh;
-                width: 4vh;
-            }
-
-            a {
-                color:map-get($colores, "fontColor");
-                font-size: 20px;
-                text-decoration: none;
-            }
+        .icFooter {
+            height: 4vh;
+            width: 4vh;
         }
     }
 }
