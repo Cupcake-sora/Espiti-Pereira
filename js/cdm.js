@@ -13,6 +13,7 @@ function ingresar() {
         if (ponerUsuario === usuarioRegistrado) {
             alert('Bienvenido/a ' + usuarioRegistrado + ' <3');
             ingresar = true;
+            agregarOb();
             break;
         } else {
             alert('Mmmm, volve a intentarlo, te quedan ' + i + ' oportunidades.');
@@ -90,33 +91,38 @@ const inventario = [
 
 console.log(inventario);
 
+function agregarOb() {
+    let cargarOb = true;
 
-let cargarOb = true;
+    while (cargarOb) {
+        let ingreso = prompt('Ingresa los datos del objeto: categoria, nombre y precio separados por un punto ( . ). Ingresa X para finalizar');
 
-while (cargarOb) {
-    let ingreso = prompt('Ingresa los datos del objeto: categoria, nombre y precio separados por un punto ( . ). Ingresa X para finalizar');
+        if (ingreso.toUpperCase() == 'X') {
+            cargarOb = false;
+            break;
+        }
 
-    if (ingreso.toUpperCase() == 'X') {
-        cargarOb = false;
-        break;
+        let datos = ingreso.split('.');
+        const producto = new ObjetoInventario(datos[0], datos[1], datos[2], datos[3], datos[4]);
+
+        inventario.push(producto);
+
+        producto.asignarId(inventario);
+
+        console.log(inventario)
     }
-
-    let datos = ingreso.split('.');
-    const objetoInventario = new ObjetoInventario(datos[0], datos[1], datos[2], datos[3], datos[4]);
-
-    inventario.push(objetoInventario);
-
-    ObjetoInventario.asignarId(inventario);
-
-    console.log(inventario)
 }
 
 
 
-//Ordenar el array
-let ordenar = prompt('Ordenar por:\n1 - Categoria (A a Z) \n2 - Nombre (Z a A)\n3 - Mayor precio\n4 - Menor precio');
 
-function orden(ordenar, array) {
+//Ordenar el array
+
+
+function orden(array) {
+    
+    let ordenar = prompt('Ordenar por:\n1 - Categoria (A a Z) \n2 - Nombre (Z a A)\n3 - Mayor precio\n4 - Menor precio');
+
     let arrayOrdenado = array.slice(0);
 
 
