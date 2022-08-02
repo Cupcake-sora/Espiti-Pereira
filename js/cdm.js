@@ -13,12 +13,12 @@ function ingresar() {
         if (ponerUsuario === usuarioRegistrado) {
             alert('Bienvenido/a ' + usuarioRegistrado + ' <3');
             ingresar = true;
-            salir = true;
             break;
         } else {
             alert('Mmmm, volve a intentarlo, te quedan ' + i + ' oportunidades.');
         }
     }
+
 }
 
 //OPCION 2
@@ -32,7 +32,7 @@ function registrarse() {
         switch (cambiarNombre) {
             case '1':
                 cambiar = true;
-                alert('Correcto tu nombre es ' + nombre);
+                alert('Correcto, tu nombre es ' + nombre);
                 break;
             case '2':
                 nombre = prompt('Ingresa tu nombre nuevamente');
@@ -59,8 +59,85 @@ function registrarse() {
     }
 
     alert(nombre + ' : \nTu nombre se usuario es  ' + nuevoUsuario + ('\nEsta va a ser tu clave para ingresar a CDM. \nPor favor no compartas esta informacion, ya que podrias ser victima de un robo de cuenta'));
-    salir = true;
 }
+
+
+
+class ObjetoInventario {
+
+    constructor(categoriaOb, nombreOb, precioOb, idOb) {
+        this.categoriaOb = categoriaOb;
+        this.nombreOb = nombreOb;
+        this.precioOb = parseInt(precioOb);
+        this.idOb = idOb
+    }
+
+    asignarId(array) {
+        this.idOb = array.length;
+    }
+
+}
+
+const inventario = [
+    new ObjetoInventario('Zapatos', 'Japan Lover', 44, 1),
+    new ObjetoInventario('Remeras', 'Shine Bright', 36, 2),
+    new ObjetoInventario('Pantalones', 'Ouscast Madam', 40, 3),
+    new ObjetoInventario('Vestidos', 'Kitsune Ghost', 52, 4),
+    new ObjetoInventario('Complementos', 'Halloween Ghost', 5),
+    new ObjetoInventario('Pelucas', 'Joyful Kite', 105, 6),
+    new ObjetoInventario('Fondos', 'Castiel', 120, 7)
+]
+
+console.log(inventario);
+
+
+let cargarOb = true;
+
+while (cargarOb) {
+    let ingreso = prompt('Ingresa los datos del objeto: categoria, nombre y precio separados por un punto ( . ). Ingresa X para finalizar');
+
+    if (ingreso.toUpperCase() == 'X') {
+        cargarOb = false;
+        break;
+    }
+
+    let datos = ingreso.split('.');
+    const objetoInventario = new ObjetoInventario(datos[0], datos[1], datos[2], datos[3], datos[4]);
+
+    inventario.push(objetoInventario);
+
+    ObjetoInventario.asignarId(inventario);
+
+    console.log(inventario)
+}
+
+
+
+//Ordenar el array
+let ordenar = prompt('Ordenar por:\n1 - Categoria (A a Z) \n2 - Nombre (Z a A)\n3 - Mayor precio\n4 - Menor precio');
+
+function orden(ordenar, array) {
+    let arrayOrdenado = array.slice(0);
+
+
+    switch (ordenar) {
+        case '1':
+            let categoriaAscendente = arrayOrdenado.sort((a, b) => a.categoriaOb.localeCompare(b.categoriaOb));
+            return categoriaAscendente;
+        case '2':
+            let nombreAscendente = arrayOrdenado.sort((a, b) => a.nombreOb.localeCompare(b.nombreOb));
+            return nombreAscendente;
+        case '3':
+            return arrayOrdenado.sort((a, b) => b.precioOb - a.precioOb);
+        case '4':
+            return arrayOrdenado.sort((a, b) => a.precioOb - b.precioOb);
+        default:
+            alert('Opcion invalida');
+            break;
+    }
+}
+
+
 
 
 
