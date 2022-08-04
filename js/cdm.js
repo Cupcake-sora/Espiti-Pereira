@@ -14,6 +14,7 @@ function ingresar() {
             alert('Bienvenido/a ' + usuarioRegistrado + ' <3');
             ingresar = true;
             agregarOb();
+            console.log (orden());
             break;
         } else {
             alert('Mmmm, volve a intentarlo, te quedan ' + i + ' oportunidades.');
@@ -73,8 +74,8 @@ class ObjetoInventario {
         this.idOb = idOb
     }
 
-    asignarId(array) {
-        this.idOb = array.length;
+    asignarId(inventario) {
+        this.idOb = inventario.length;
     }
 
 }
@@ -116,27 +117,27 @@ function agregarOb() {
 
 
 
-//Ordenar el array
+//Ordenar el inventario
 
 
-function orden(array) {
-    
+function orden() {
+
     let ordenar = prompt('Ordenar por:\n1 - Categoria (A a Z) \n2 - Nombre (Z a A)\n3 - Mayor precio\n4 - Menor precio');
 
-    let arrayOrdenado = array.slice(0);
+    let inventarioOrdenado = inventario.slice(0);
 
 
     switch (ordenar) {
         case '1':
-            let categoriaAscendente = arrayOrdenado.sort((a, b) => a.categoriaOb.localeCompare(b.categoriaOb));
+            let categoriaAscendente = inventarioOrdenado.sort((a, b) => a.categoriaOb.localeCompare(b.categoriaOb));
             return categoriaAscendente;
         case '2':
-            let nombreAscendente = arrayOrdenado.sort((a, b) => a.nombreOb.localeCompare(b.nombreOb));
+            let nombreAscendente = inventarioOrdenado.sort((a, b) => a.nombreOb.localeCompare(b.nombreOb));
             return nombreAscendente;
         case '3':
-            return arrayOrdenado.sort((a, b) => b.precioOb - a.precioOb);
+            return inventarioOrdenado.sort((a, b) => b.precioOb - a.precioOb);
         case '4':
-            return arrayOrdenado.sort((a, b) => a.precioOb - b.precioOb);
+            return inventarioOrdenado.sort((a, b) => a.precioOb - b.precioOb);
         default:
             alert('Opcion invalida');
             break;
