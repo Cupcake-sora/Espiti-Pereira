@@ -1,9 +1,7 @@
 let usuarioRegistrado = 'cupcake';
 
-alert('Bienvenido a CDM, un juego de rol donde tu eliges el rumbo de la historia');
 
 let salir = false
-
 //OPCION 1
 function ingresar() {
     let ingresa = false;
@@ -118,8 +116,6 @@ function agregarOb() {
 
 
 //Ordenar el inventario
-
-
 function orden() {
 
     let ordenar = prompt('Ordenar por:\n1 - Categoria (A a Z) \n2 - Nombre (Z a A)\n3 - Mayor precio\n4 - Menor precio');
