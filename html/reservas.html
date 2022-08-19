@@ -121,15 +121,15 @@
 			<fieldset>
 				<legend class="list-group">Seleccione una sala:</legend>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="sala" value="sala-A">Sala de juntas A (Max.
+					<input class="form-check-input me-1 sala" type="radio" name="sala" value="sala-A">Sala de juntas A (Max.
 					15 pers.)
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="sala" value="sala-B">Sala de juntas B (Max.
+					<input class="form-check-input me-1 sala" type="radio" name="sala" value="sala-B">Sala de juntas B (Max.
 					10 pers.)
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="sala" value="sala-C">Sala de juntas C (Max.
+					<input class="form-check-input me-1 sala" type="radio" name="sala" value="sala-C">Sala de juntas C (Max.
 					6 pers.)
 				</label>
 			</fieldset>
@@ -137,19 +137,19 @@
 			<fieldset>
 				<legend class="list-group">Tiempo de estancia:</legend>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="estancia" value="1h">1 hora
+					<input class="form-check-input me-1 estancia" type="radio" name="estancia" value="1h">1 hora
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="estancia" value="2h">2 horas
+					<input class="form-check-input me-1 estancia" type="radio" name="estancia" value="2h">2 horas
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="estancia" value="3h">3 horas
+					<input class="form-check-input me-1 estancia" type="radio" name="estancia" value="3h">3 horas
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="estancia" value="6h">6 horas
+					<input class="form-check-input me-1 estancia" type="radio" name="estancia" value="6h">6 horas
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="radio" name="estancia" value="8h">8 horas
+					<input class="form-check-input me-1 estancia" type="radio" name="estancia" value="8h">8 horas
 				</label>
 			</fieldset>
 
@@ -161,34 +161,34 @@
 			<fieldset>
 				<legend class="list-group">Servicios requeridos</legend>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios" value="ninguno">Ningun
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios" value="ninguno">Ningun
 					servicio
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios" value="proyector">Proyector
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios" value="proyector">Proyector
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios"
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios"
 						value="d/m-simple">Desayuno/merienda simple
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios"
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios"
 						value="d/m-completo">Desayuno/merienda completo
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios"
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios"
 						value="a/c-simple">Almuerso/cena simple
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios"
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios"
 						value="a/c-completo">Almuerso/cena completo
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios" value="break-simple">Break
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios" value="break-simple">Break
 					simple
 				</label>
 				<label class="list-group-item">
-					<input class="form-check-input me-1" type="checkbox" name="servicios" value="break-completo">Break
+					<input class="form-check-input me-1 servicios" type="checkbox" name="servicios" value="break-completo">Break
 					completo
 				</label>
 			</fieldset>
@@ -209,13 +209,13 @@
 
 			<br>
 			<hr>
-			<button type="submit">Vista previa del presupuesto.</button>
+			<button id="previa" type="submit">Vista previa del presupuesto.</button>
 			<br>
 			<hr>
 			<label><input type="checkbox" name="terminos" value="terminos">Acepto los terminos y condiciones.</label>
 			<br>
 
-			<button type="submit">Reservar</button>
+			<button id="reserva" type="submit">Reservar</button>
 		</form>
 
 	</div>

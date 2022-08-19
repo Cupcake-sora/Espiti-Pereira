@@ -1,5 +1,6 @@
-class curso {
-    constructor(titulo, img, precio, nivel, requerimiento, listaTemario, id) {
+class Curso {
+    constructor(id, titulo, img, precio, nivel, requerimiento, listaTemario) {
+        this.id = id;
         this.titulo = titulo.toUpperCase();
         this.img = img;
         this.precio = parseInt(precio);
@@ -17,52 +18,78 @@ class curso {
 }
 
 
-let cursos = [{
-    titulo: 'Filtrados I',
-    img: '../imagenes/cafefl.jpg',
-    precio: 12000,
-    nivel: 'INICIAL',
-    requerimiento: '',
-    listaTemario: 'Calibracion de espresso. \nEmulsion de leches.',
-}, {
-    titulo: 'Filtrados II',
-    img: '../imagenes/cafefl.jpg',
-    precio: 15000,
-    nivel: 'INTERMEDIO',
-    requerimiento: '',
-    listaTemario: 'Limpieza de equipos.',
-}, {
-    titulo: 'Filtrados III',
-    img: '../imagenes/cafefl.jpg',
-    precio: 15000,
-    nivel: 'AVANZADO',
-    requerimiento: '',
-    listaTemario: 'Preparación de filtrados para exposiciones o competencias internacionales. \nNivel de preparación simil SCA.',
-}];
+let cursos = [
+    new Curso(0, 'Filtrados I', '../imagenes/cafefl.jpg', 1200, 'INICIAL', '', 'Calibracion de espresso. \nEmulsion de leches..'),
+    new Curso(1, 'Filtrados II', '../imagenes/cafefl.jpg', 1500, 'INTERMEDIO', '', 'Limpieza de equipos.'),
+    new Curso(2, 'Filtrados III', '../imagenes/cafefl.jpg', 1500, 'AVANZADO', '', 'Preparación de filtrados para exposiciones o competencias internacionales. \nNivel de preparación simil SCA.'),
+    new Curso(3, 'Filtrados IV', '../imagenes/cafefl.jpg', 1200, 'AVANZADO', '', 'Nivel de preparación simil SCA.'),
+    new Curso(4, 'Latte-art I', '../imagenes/cafeex.jpg', 1200, 'INICIAL', '', 'Emulsión de distintas leches.'),
+    new Curso(5, 'Latte-art II', '../imagenes/cafeex.jpg', 1400, 'INTERMEDIO', '', 'Dibujos complejos, adaptación a distintas pitchers.'),
+    new Curso(6, 'Calibración de molienda', '../imagenes/cafemk.jpg', 1300, 'INTERMEDIO', '', 'Identificación y calibración para distintos métodos.'),
+    new Curso(7, 'Practica libre 1hr', '../imagenes/pubCoffeMachine.png', 1500, 'INTERMEDIO', '', 'Uso libre del equipamiento,.'),
+];
 
-const contenedorTarjeta = document.getElementById('cursos');
-let string = "";
-for (const curso of cursos) {
-    string += `
+function agregartarjeta() {
+    const contenedorTarjeta = document.getElementById('cursos');
+    let string = "";
+    for (const curso of cursos) {
+        string += `
     <div class="card m-2" style="width: 18rem;">
-    <div>
-        <h5 class="card-header">
-            ${curso.titulo}
-        </h5>
-        <img class="card-img" src="${curso.img}" alt="Curso de filtrados 1">
-        <h5 class="card-title">$${curso.precio}</h5>
-    </div>
-    <div>
-        <div class="card-body">
-            <p class="card-text">NIVEL ${curso.nivel}</p>
-            <p class="card-text">${curso.requerimiento}</p>
-            <p class="card-text">${curso.listaTemario}</p>
+        <div>
+            <h5 class="card-header">${curso.titulo}</h5>
+            <img class="card-img" src="${curso.img}" alt="Curso de filtrados 1">
+            <h5 class="card-title">$${curso.precio}</h5>
         </div>
-    </div>
+        <div>
+            <div class="card-body">
+                <p class="card-text">NIVEL ${curso.nivel}</p>
+                <p class="card-text">${curso.requerimiento}</p>
+                <p class="card-text">${curso.listaTemario}</p>
+                <button id="${curso.id} " class="btnCarrito"> agregar </button>
+            </div>
+        </div>
     </div>`;
-    
+
+    }
+    contenedorTarjeta.innerHTML = string;
+
+    const btnCarrito = document.querySelectorAll('.btnCarrito');
+    btnCarrito.forEach(btn => {
+        btn.addEventListener('click', () => {
+            let idobject = parseInt(btn.id);
+            let objeto = cursos.find((curso) => curso.id == idobject);
+            addcarrito(objeto);
+        })
+    });
+
 }
-contenedorTarjeta.innerHTML=string;
+
+agregartarjeta();
+
+
+let carrito = [];
+
+function addcarrito(addcurso) {
+    let cursocarrito = carrito.find((curso) => curso.id == addcurso.id);
+
+    if (cursocarrito == undefined) {
+        carrito.push(addcurso);
+
+        const item = document.createElement('div');
+        item.className = 'item';
+        const carritohtml = document.getElementById('carrito');
+
+        item.innerHTML = `<h5>${addcurso.titulo}</h5>
+        <h5>$${addcurso.precio}</h5>`;
+
+        const items = document.querySelectorAll('.item');
+
+        carritohtml.append(item);
+    }
+
+}
+
+
 
 
 //-----------------------------------------------------------------------------------------

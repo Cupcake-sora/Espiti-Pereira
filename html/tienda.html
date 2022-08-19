@@ -20,8 +20,7 @@
 <body>
 	<!-- inicio nav -->
 
-
-	<nav class="navbar sticky-top navbar-expand-md navbar-light bgMarron">
+	<nav class="navbar sticky-top navbar-expand-md navbar-light d-flex justify-content-around">
 		<div class="container-fluid d-flex justify-content-around">
 			<a href="../index.html">
 				<img class="logoCafe" src="../imagenes/logo.webp" alt="logo Spiti">
@@ -31,6 +30,7 @@
 				aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
+
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 					<li class="nav-item">
@@ -51,8 +51,28 @@
 				</ul>
 			</div>
 		</div>
-	</nav>
 
+
+		<button class=" sticky " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+			aria-controls="offcanvasNavbar">
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+				class="shopping-card-icon">
+				<path fill="#2e2c36"
+					d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 3c0 .55.45 1 1 1h1l3.6 7.59-1.35 2.44C4.52 15.37 5.48 17 7 17h11c.55 0 1-.45 1-1s-.45-1-1-1H7l1.1-2h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A.996.996 0 0020.01 4H5.21l-.67-1.43a.993.993 0 00-.9-.57H2c-.55 0-1 .45-1 1zm16 15c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z">
+				</path>
+			</svg>
+		</button>
+		<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+			<div class="offcanvas-header">
+				<h5 class="offcanvas-title" id="offcanvasNavbarLabel">Carrito</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+			</div>
+			<div class="offcanvas-body">
+				<div id="carrito"></div>
+			</div>
+		</div>
+
+	</nav>
 	<!-- fin nav -->
 
 	<!-- inicio de divisiones en la tienda -->
@@ -63,151 +83,93 @@
 			<h3>CURSOS</h3>
 			<p>Aca encontraras todos nuestros cursos.</p>
 			<div id="cursos" class="d-flex justify-content-center flex-wrap ">
-				<div class="card m-2">
-					<div>
-						<h5 class="card-header">
-							FILTRADOS I
-						</h5>
-						<img class="card-img" src="../imagenes/cafefl.jpg" alt="Curso de filtrados 1">
-						<h5 class="card-title">$12000</h5>
-					</div>
-					<div>
-						<div class="card-body">
-							<p class="card-text">NIVEL INICAL</p>
-							<p class="card-text">No requiere conocimientos previos.</p>
-							<p class="card-text">Aca aprenderas ....</p>
-							<ul>
-								<li>Graduar molienda</li>
-							</ul>
-						</div>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafes.png" alt="Curso de tostado">
+					<div class="card-body">
+						<p class="card-text">Curso de tostado de granos. Nivel avanzado.</p>
 					</div>
 				</div>
-				<div class="card m-2">
-					<div>
-						<h5 class="card-header">
-							FILTRADOS I
-						</h5>
-						<img class="card-img" src="../imagenes/cafefl.jpg" alt="Curso de filtrados 1">
-						<h5 class="card-title">$12000</h5>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/pubCoffeMachine.png" alt="Curso de espresso">
+					<div class="card-body">
+						<p class="card-text">Curso de espresso. Nivel intermedio.</p>
 					</div>
-					<div>
-						<div class="card-body">
-							<p class="card-text">NIVEL INICAL</p>
-							<p class="card-text">No requiere conocimientos previos.</p>
-							<p class="card-text">Aca aprenderas ....</p>
-							<ul>
-								<li>Graduar molienda</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="card m-2">
-					<div>
-						<h5 class="card-header">
-							FILTRADOS I
-						</h5>
-						<img class="card-img" src="../imagenes/cafefl.jpg" alt="Curso de filtrados 1">
-						<h5 class="card-title">$12000</h5>
-					</div>
-					<div>
-						<div class="card-body">
-							<p class="card-text">NIVEL INICAL</p>
-							<p class="card-text">No requiere conocimientos previos.</p>
-							<p class="card-text">Aca aprenderas ....</p>
-							<ul>
-								<li>Graduar molienda</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafes.png" alt="Curso de tostado">
-				<div class="card-body">
-					<p class="card-text">Curso de tostado de granos. Nivel avanzado.</p>
-				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/pubCoffeMachine.png" alt="Curso de espresso">
-				<div class="card-body">
-					<p class="card-text">Curso de espresso. Nivel intermedio.</p>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div>
-		<h3 id="cafe">CAFE</h3>
-		<p>Viajar por el mundo con nuestros distintos origenes.</p>
-		<div class="d-flex justify-content-center flex-wrap ">
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafehoney.webp" alt="Cafe Honey">
-				<div class="card-body">
-					<p class="card-text">Cafe Honey para tostar.</p>
+		<div>
+			<h3 id="cafe">CAFE</h3>
+			<p>Viajar por el mundo con nuestros distintos origenes.</p>
+			<div class="d-flex justify-content-center flex-wrap ">
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafehoney.webp" alt="Cafe Honey">
+					<div class="card-body">
+						<p class="card-text">Cafe Honey para tostar.</p>
+					</div>
 				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafelavado.webp" alt="Cafe Lavado">
-				<div class="card-body">
-					<p class="card-text">Cafe Lavado tostado medio-claro.</p>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafelavado.webp" alt="Cafe Lavado">
+					<div class="card-body">
+						<p class="card-text">Cafe Lavado tostado medio-claro.</p>
+					</div>
 				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafeverde.png" alt="Cafe verde">
-				<div class="card-body">
-					<p class="card-text">Cafe verde para tostar.</p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div>
-		<h3 id="productos">PRODUCTOS</h3>
-		<p>Equipate con lo necesario para convertirte en el mejor barista de tu casa</p>
-		<div class="d-flex justify-content-center flex-wrap ">
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafemk.jpg" alt="Cafetera moka">
-				<div class="card-body">
-					<p class="card-text">Cafetera Moka.</p>
-				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafeex.jpg" alt="Cafe espresso">
-				<div class="card-body">
-					<p class="card-text">Cafetera espresso.</p>
-				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/cafepf.jpg" alt="Cafetera de embolo">
-				<div class="card-body">
-					<p class="card-text">Cafetera de embolo.</p>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafeverde.png" alt="Cafe verde">
+					<div class="card-body">
+						<p class="card-text">Cafe verde para tostar.</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div>
-		<h3 id="giftcards">GIFT CARDS</h3>
-		<p>No sabes que regalarte a tu amigui barista? No te preocupes, regalale una gift card para que venga y
-			elija el mejor equipamiento</p>
-		<div class="d-flex justify-content-center flex-wrap flex-sm-wrap-reverse ">
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/giftcard.png" alt="Gift card de 500">
-				<div class="card-body">
-					<p class="card-text">Gift card de $500</p>
+		<div>
+			<h3 id="productos">PRODUCTOS</h3>
+			<p>Equipate con lo necesario para convertirte en el mejor barista de tu casa</p>
+			<div class="d-flex justify-content-center flex-wrap ">
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafemk.jpg" alt="Cafetera moka">
+					<div class="card-body">
+						<p class="card-text">Cafetera Moka.</p>
+					</div>
 				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/giftcard.png" alt="Gift card de 1000">
-				<div class="card-body">
-					<p class="card-text">Gift card de $1000</p>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafeex.jpg" alt="Cafe espresso">
+					<div class="card-body">
+						<p class="card-text">Cafetera espresso.</p>
+					</div>
 				</div>
-			</div>
-			<div class="card m-2" style="width: 18rem;">
-				<img class="card-img-top" src="../imagenes/giftcard.png" alt="Gift card de 2000">
-				<div class="card-body">
-					<p class="card-text">Gift card de $2000</p>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/cafepf.jpg" alt="Cafetera de embolo">
+					<div class="card-body">
+						<p class="card-text">Cafetera de embolo.</p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<div>
+			<h3 id="giftcards">GIFT CARDS</h3>
+			<p>No sabes que regalarte a tu amigui barista? No te preocupes, regalale una gift card para que venga y
+				elija el mejor equipamiento</p>
+			<div class="d-flex justify-content-center flex-wrap flex-sm-wrap-reverse ">
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/giftcard.png" alt="Gift card de 500">
+					<div class="card-body">
+						<p class="card-text">Gift card de $500</p>
+					</div>
+				</div>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/giftcard.png" alt="Gift card de 1000">
+					<div class="card-body">
+						<p class="card-text">Gift card de $1000</p>
+					</div>
+				</div>
+				<div class="card m-2" style="width: 18rem;">
+					<img class="card-img-top" src="../imagenes/giftcard.png" alt="Gift card de 2000">
+					<div class="card-body">
+						<p class="card-text">Gift card de $2000</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- inicio Footer -->
