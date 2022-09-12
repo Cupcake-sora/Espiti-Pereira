@@ -1,0 +1,74 @@
+[
+    {
+        "id": 0,
+        "titulo": "FILTRADOS I",
+        "img": "../imagenes/cafefl.jpg",
+        "precio": 1200,
+        "nivel": "INICIAL",
+        "requerimiento": "NO REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "calibracion de espresso. \nemulsion de leches.."
+    },
+    {
+        "id": 1,
+        "titulo": "FILTRADOS II",
+        "img": "../imagenes/cafefl.jpg",
+        "precio": 1500,
+        "nivel": "INTERMEDIO",
+        "requerimiento": "REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "limpieza de equipos."
+    },
+    {
+        "id": 2,
+        "titulo": "FILTRADOS III",
+        "img": "../imagenes/cafefl.jpg",
+        "precio": 1500,
+        "nivel": "AVANZADO",
+        "requerimiento": "REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "preparación de filtrados para exposiciones o competencias internacionales. \nnivel de preparación simil sca."
+    },
+    {
+        "id": 3,
+        "titulo": "FILTRADOS IV",
+        "img": "../imagenes/cafefl.jpg",
+        "precio": 1200,
+        "nivel": "AVANZADO",
+        "requerimiento": "REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "nivel de preparación simil sca."
+    },
+    {
+        "id": 4,
+        "titulo": "LATTE-ART I",
+        "img": "../imagenes/cafeex.jpg",
+        "precio": 1200,
+        "nivel": "INICIAL",
+        "requerimiento": "NO REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "emulsión de distintas leches."
+    },
+    {
+        "id": 5,
+        "titulo": "LATTE-ART II",
+        "img": "../imagenes/cafeex.jpg",
+        "precio": 1400,
+        "nivel": "INTERMEDIO",
+        "requerimiento": "REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "dibujos complejos, adaptación a distintas pitchers."
+    },
+    {
+        "id": 6,
+        "titulo": "CALIBRACIÓN DE MOLIENDA",
+        "img": "../imagenes/cafemk.jpg",
+        "precio": 1300,
+        "nivel": "INTERMEDIO",
+        "requerimiento": "REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "identificación y calibración para distintos métodos."
+    },
+    {
+        "id": 7,
+        "titulo": "PRACTICA LIBRE 1HR",
+        "img": "../imagenes/pubCoffeMachine.png",
+        "precio": 1500,
+        "nivel": "INTERMEDIO",
+        "requerimiento": "REQUIERE CONOCIMIENTOS PREVIOS",
+        "listaTemario": "uso libre del equipamiento."
+    }
+]

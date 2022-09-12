@@ -1,4 +1,5 @@
 
+//constructor de curso
 class Curso {
     constructor(id, titulo, img, precio, nivel, requerimiento, listaTemario) {
         this.id = id;
@@ -6,31 +7,33 @@ class Curso {
         this.img = img;
         this.precio = parseInt(precio);
         this.nivel = nivel.toUpperCase();
-
         if (this.nivel == 'INICIAL') {
             this.requerimiento = 'NO REQUIERE CONOCIMIENTOS PREVIOS';
         }
         else {
             this.requerimiento = 'REQUIERE CONOCIMIENTOS PREVIOS';
         }
-
         this.listaTemario = listaTemario.toLowerCase();
     }
 }
 
+//array carrito donde recibe los cursos agregados
+let carrito = [];
 
-let cursos = [
-    new Curso(0, 'Filtrados I', '../imagenes/cafefl.jpg', 1200, 'INICIAL', '', 'Calibracion de espresso. \nEmulsion de leches..'),
-    new Curso(1, 'Filtrados II', '../imagenes/cafefl.jpg', 1500, 'INTERMEDIO', '', 'Limpieza de equipos.'),
-    new Curso(2, 'Filtrados III', '../imagenes/cafefl.jpg', 1500, 'AVANZADO', '', 'Preparación de filtrados para exposiciones o competencias internacionales. \nNivel de preparación simil SCA.'),
-    new Curso(3, 'Filtrados IV', '../imagenes/cafefl.jpg', 1200, 'AVANZADO', '', 'Nivel de preparación simil SCA.'),
-    new Curso(4, 'Latte-art I', '../imagenes/cafeex.jpg', 1200, 'INICIAL', '', 'Emulsión de distintas leches.'),
-    new Curso(5, 'Latte-art II', '../imagenes/cafeex.jpg', 1400, 'INTERMEDIO', '', 'Dibujos complejos, adaptación a distintas pitchers.'),
-    new Curso(6, 'Calibración de molienda', '../imagenes/cafemk.jpg', 1300, 'INTERMEDIO', '', 'Identificación y calibración para distintos métodos.'),
-    new Curso(7, 'Practica libre 1hr', '../imagenes/pubCoffeMachine.png', 1500, 'INTERMEDIO', '', 'Uso libre del equipamiento.'),
-];
 
-function agregartarjeta() {
+//
+function getCursos() {
+    fetch("../tienda.json")
+        .then(response => response.json().then(data => {
+            agregartarjeta(data)
+        }))
+        .catch(err => console.log(err))
+}
+
+//creacion de cursos con cards
+//agrego cursos al carrito usando evento click sobre boton "agregar"
+//uso de toastify con mensaje notificando que se agrego al carrito
+function agregartarjeta(cursos) {
     const contenedorTarjeta = document.getElementById('cursos');
     let string = "";
     for (const curso of cursos) {
@@ -59,67 +62,73 @@ function agregartarjeta() {
         btn.addEventListener('click', () => {
             let idobject = parseInt(btn.id);
             let objeto = cursos.find((curso) => curso.id == idobject);
-            addcarrito(objeto);
+            let cursocarrito = carrito.find((curso) => curso.id == objeto.id);
+            if (cursocarrito == undefined) {
+                carrito.push(objeto);
+                showcarrito();
+                Toastify({
+                    text: "<3  Agregado a tu carrito  <3 ",
+                    className: "info border border-2 border-white",
+                    duration: 1500,
+                    style: {
+                        background: "linear-gradient(140deg, rgba(195,120,79,1) 20%, #f7aa83 50%, rgba(198,125,84,1) 94%)",
+                    }
+                }).showToast();
+                guardado();
+            }
         })
     });
 
 }
 
-agregartarjeta();
-
-
-let carrito = [];
-
-function addcarrito(addcurso) {
-    let cursocarrito = carrito.find((curso) => curso.id == addcurso.id);
-
-    if (cursocarrito == undefined) {
-        carrito.push(addcurso);
-
-        const item = document.createElement('div');
-        item.className = 'card item';
-        const carritohtml = document.getElementById('carrito');
-
-        item.innerHTML = `<p class="card-header">${addcurso.titulo}</p>
-        <p class="text-end">$${addcurso.precio}</p>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-        </svg>
-
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash2" viewBox="0 0 16 16">
-            <path d="M14 3a.702.702 0 0 1-.037.225l-1.684 10.104A2 2 0 0 1 10.305 15H5.694a2 2 0 0 1-1.973-1.671L2.037 3.225A.703.703 0 0 1 2 3c0-1.105 2.686-2 6-2s6 .895 6 2zM3.215 4.207l1.493 8.957a1 1 0 0 0 .986.836h4.612a1 1 0 0 0 .986-.836l1.493-8.957C11.69 4.689 9.954 5 8 5c-1.954 0-3.69-.311-4.785-.793z"/>
-        </svg>
-        `;
-
-        const items = document.querySelectorAll('.item');
-
-        carritohtml.append(item);
+window.onload = () => {
+    getCursos();
+    if (carritoguardado() != null) {
+        carrito.push(...carritoguardado());
+        showcarrito();
     }
-
 }
 
+//creacion de card que muestran cada curso agregado al carrito con nombre, precio y boton para borrar 
+function showcarrito() {
+    const carritohtml = document.getElementById('carrito');
+    carritohtml.innerHTML = "";
+    for (const curso of carrito) {
+        const item = document.createElement('div');
+        item.className = 'card border border-3 rounded';
+        item.innerHTML = `
+        <p>${curso.titulo}</p>
+        <p>$${curso.precio}</p>
+        <button class="btn btn-outline-secondary btnDel ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z"/>
+            </svg>
+        </button>
+        `;
+        const items = document.querySelectorAll('.item');
+        carritohtml.append(item);
+    }
+    borraritem()
+}
 
+//borrado de un curso del carrito utilizando el evento click sobre un boton
+function borraritem() {
+    const dellitem = document.querySelectorAll('.btnDel');
+    dellitem.forEach((btnDell, index) => {
+        btnDell.addEventListener('click', () => {
+            carrito.splice(index, 1)
+            showcarrito();
+            guardado();
+        })
+    })
+}
 
+//guarda en el sessionStorage los cursos que se agregaron al carrito
+function guardado() {
+    sessionStorage.setItem("carrito", JSON.stringify(carrito));
+}
 
-//-----------------------------------------------------------------------------------------
-
-
-//class para contruir
-//construir los cursos
-//construir los productos cafe
-//construir los productos de tienda
-
-//const para arrays
-// hacer array para los cursoss
-// hacer array para cafes
-// hacer array para productos de tienda
-
-//crear las secciones de los arrays
-//usar document.getElement (para ingresar a la etiqueta)
-//document.createElement (para crear un elemento dentro de la etiqueta)
-// y (div, section).append
-
-
-
+//muestra el carrito guardado desde el sessionStorage
+function carritoguardado() {
+    return JSON.parse(sessionStorage.getItem("carrito"))
+}
